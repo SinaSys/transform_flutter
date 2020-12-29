@@ -50,15 +50,13 @@ class TransformDemoState extends State<TransformDemo> {
         slider(),
         Container(
           child: Transform(
-            transform: Matrix4.skewX(sliderVal / 100),
+            transform: Matrix4.identity()
+              ..setEntry(3, 2, sliderVal / 1000)
+              ..rotateX(3.14 / 20.0),
+            alignment: FractionalOffset.center,
             child: Container(
               height: 100.0,
               width: 100.0,
               color: Colors.blue,
-            ),
-          ),
-        )
-      ],
-    ));
-  }
+            ),),)],));}
 }
