@@ -49,17 +49,13 @@ class TransformDemoState extends State<TransformDemo> {
       children: [
         slider(),
         Container(
-          child: Transform.scale(
-            scale: sliderVal == 0 ? 1 : sliderVal / 50,
-            origin: Offset(0.0, 0.0),
+          child: Transform.translate(
+            offset: Offset(sliderVal, 110.0),
             child: Container(
               height: 100.0,
               width: 100.0,
-              color: Colors.green,
+              color: Colors.yellow,
             ),
-          ),
-        )
-      ],
-    ));
+          ),)],));
   }
 }
