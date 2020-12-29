@@ -16,13 +16,11 @@ class MyApp extends StatelessWidget {
 class TransformDemo extends StatefulWidget {
   TransformDemo() : super();
 
-
   @override
   TransformDemoState createState() => TransformDemoState();
 }
 
 class TransformDemoState extends State<TransformDemo> {
-
   double sliderVal = 0;
 
   @override
@@ -44,26 +42,24 @@ class TransformDemoState extends State<TransformDemo> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-          children: [
-            slider(),
-            Container(
-              child: Transform.rotate(
-                angle: sliderVal,
-                origin: Offset(0.0, 0.0),
-                child: Container(
-                  height: 100.0,
-                  width: 100.0,
-                  color: Colors.red,
-                ),
-              ),
+      children: [
+        slider(),
+        Container(
+          child: Transform.scale(
+            scale: sliderVal == 0 ? 1 : sliderVal / 50,
+            origin: Offset(0.0, 0.0),
+            child: Container(
+              height: 100.0,
+              width: 100.0,
+              color: Colors.green,
             ),
-          ],
+          ),
         )
-    );
+      ],
+    ));
   }
 }
