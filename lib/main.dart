@@ -49,13 +49,16 @@ class TransformDemoState extends State<TransformDemo> {
       children: [
         slider(),
         Container(
-          child: Transform.translate(
-            offset: Offset(sliderVal, 110.0),
+          child: Transform(
+            transform: Matrix4.skewX(sliderVal / 100),
             child: Container(
               height: 100.0,
               width: 100.0,
-              color: Colors.yellow,
+              color: Colors.blue,
             ),
-          ),)],));
+          ),
+        )
+      ],
+    ));
   }
 }
